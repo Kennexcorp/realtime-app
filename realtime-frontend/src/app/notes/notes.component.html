@@ -1,0 +1,33 @@
+<div class="row mt-5">
+  <div class="col-lg-4 offset-lg-4">
+    <form [formGroup]="notesForm" (ngSubmit)="onSubmit()">
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="description">
+        <label for="floatingInput">Insert note here</label>
+      </div>
+      <div class="">
+        <button type="submit" class="btn btn-success text-right" [disabled]="!notesForm.valid">Success</button>
+      </div>
+    </form>
+
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 offset-lg-3">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Your notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let note of notes">
+          <td>{{ note.description }}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>
